@@ -43,4 +43,15 @@ describe('Verifica se a aplicação contém um conjunto fixo de links de navega�
     userEvent.click(favorites);
     expect(history.location.pathname).toBe('/favorites');
   });
+
+  it('Testa se renderiza a página Not Found ao entrar em uma URL desconhecida. ', () => {
+    const { history } = renderWithRouter(<App />);
+    history.push('naosei');
+
+    const notFoundTitle = screen.getByRole('heading', {
+      level: 2,
+    });
+
+    expect(notFoundTitle).toBeInTheDocument();
+  });
 });
