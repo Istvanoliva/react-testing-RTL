@@ -13,7 +13,7 @@ describe('Teste o componente Pokemon', () => {
     const image = screen.getByRole('img', { name: /pikachu sprite/i });
 
     expect(name).toBeInTheDocument();
-    expect(type).toBeInTheDocument();
+    expect(type).toHaveTextContent('Electric');
     expect(weight).toBeDefined();
     expect(image).toHaveAttribute('src', 'https://cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png');
   });
