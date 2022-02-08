@@ -9,7 +9,7 @@ describe('Teste o componente Pokemon', () => {
   it('Teste o nome, tipo, peso e imagem do card Pokémon', () => {
     const name = screen.getByTestId('pokemon-name');
     const type = screen.getByTestId('pokemon-type');
-    const weight = screen.getAllByText(/Average weight: 6.0 Kg/i);
+    const weight = screen.getByText(/Average weight: 6.0 Kg/i);
     const image = screen.getByRole('img', { name: /pikachu sprite/i });
 
     expect(name).toBeInTheDocument();
