@@ -14,7 +14,7 @@ describe('Teste o componente Pokemon', () => {
 
     expect(name).toBeInTheDocument();
     expect(type).toHaveTextContent('Electric');
-    expect(weight).toBeDefined();
+    expect(weight).toBeInTheDocument();
     expect(image).toHaveAttribute('src', 'https://cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png');
   });
 
@@ -26,7 +26,7 @@ describe('Teste o componente Pokemon', () => {
     const detailsTitle = screen.getByRole('heading', { name: /pikachu details/i });
     expect(detailsTitle).toBeInTheDocument();
 
-    const checkbox = screen.getByLabelText(/Pokémon favoritado?/i);
+    const checkbox = screen.getByLabelText('Pokémon favoritado?');
     expect(checkbox).toBeInTheDocument();
     userEvent.click(checkbox);
 
